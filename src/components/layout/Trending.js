@@ -68,7 +68,7 @@ export default function Trending({title}){
                         {title}
                     </Typography>
                     <Grid container spacing={4} className={classes.gridContainer}> 
-                    {items.map((item) => (
+                    { items.map((item) => (
                         <Grid item xs={12} sm={6} md={4} xl={3}  key={item._id}>
                             <Link to={"/item/" + item._id} className={classes.noneTextDecoration}>
                             <Item id="product-item">
@@ -94,7 +94,7 @@ export default function Trending({title}){
                             </Item>
                             </Link>
                         </Grid>
-                        ))}
+                    ))}
                     </Grid>
                 </Box>
             )}
