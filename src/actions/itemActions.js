@@ -9,6 +9,7 @@ import {
 import { ITEM_API_URL } from "../constants/apiConstants";
 import axios from "axios";
 
+
 export const listItems = () => async(dispatch) => {
     try {
         //this is for logging purposes to let us know when debugging our code that we are about to start requesting the Item List from the backend
@@ -18,7 +19,11 @@ export const listItems = () => async(dispatch) => {
         const {data} = await axios({
             method: "get",
             baseURL: ITEM_API_URL,
-            url: "/"
+            url: "/",
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': '*',
+            },
         });
 
         dispatch({
