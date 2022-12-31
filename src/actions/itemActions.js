@@ -21,9 +21,10 @@ export const listItems = () => async(dispatch) => {
             baseURL: ITEM_API_URL,
             url: "https://cyclexbackend.adaptable.app/",
             headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': '*',
-            },
+                "Access-Control-Allow-Origin": "https://cyclexfrontend.netlify.app/",
+                "Access-Control-Allow-Methods": "POST, PUT, PATCH, GET, DELETE, OPTIONS",
+                "Access-Control-Allow-Headers": "Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization"
+            }
         });
 
         dispatch({
