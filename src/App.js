@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 import Landing from "./components/pages/Landing";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {HashRouter as Router, Routes, Route} from "react-router-dom";
 import Box from "@mui/material/Box";
 import Registration from "./components/pages/Registration";
 import Forgot from "./components/pages/Forgot";
