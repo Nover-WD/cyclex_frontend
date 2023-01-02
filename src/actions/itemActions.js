@@ -19,7 +19,7 @@ export const listItems = () => async(dispatch) => {
         const {data} = await axios({
             method: "get",
             baseURL: ITEM_API_URL,
-            url: "http://cyclexbackend.adaptable.app/",
+            url: "https://cyclexbackend.adaptable.app/",
         })
 
         dispatch({
