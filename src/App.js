@@ -32,7 +32,7 @@ export default function App(){
                 <Route path="/cart/" element={<Cart/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/shop" element={<Shop/>} />
-                <Route path="/admin" element={<AdminPanel/>}/>
+                <Route path="/cyclex-admin" element={<AdminPanel/>}/>
                 <Route path="/checkout" element={<Checkout/>}/>
                 <Route path="*" element={<Landing/>}/>
               </Routes>

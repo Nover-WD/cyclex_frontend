@@ -9,6 +9,7 @@ import {
 import { ITEM_API_URL } from "../constants/apiConstants";
 import axios from "axios";
 
+const serverUrl = "https://cyclexbackend.adaptable.app";
 
 export const listItems = () => async(dispatch) => {
     try {
@@ -18,7 +19,7 @@ export const listItems = () => async(dispatch) => {
         //get the item list from the backend(api call)
         const {data} = await axios({
             method: "get",
-            url: "https://cyclexbackend.adaptable.app/" + ITEM_API_URL,
+            url: serverUrl + ITEM_API_URL,
         })
 
         dispatch({
@@ -43,8 +44,7 @@ export const listItemDetail = (id) => async(dispatch) => {
         //get the data from backend(api call)
         const {data} = await axios({
             method: "get",
-            baseURL: ITEM_API_URL,
-            url: `/${id}` //get the id from url route params
+            url: serverUrl + ITEM_API_URL + `/${id}` //get the id from url route params
         });
 
         //pass the data and pass to reducer

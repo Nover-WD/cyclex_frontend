@@ -2,20 +2,20 @@ import axios from "axios";
 import { CART_APPEND_ITEM, CART_REQUEST_SUCCESS, CART_REMOVE_ITEM, REMOVE_ITEMS_SUCCESS } from "../constants/cartConstants";
 import { CART_API_URL, ITEM_API_URL } from "../constants/apiConstants";
 
+const serverUrl = "https://cyclexbackend.adaptable.app";
+
 export const addToCart = (id, qty, userId) => async(dispatch, getState) => {
     
     //get the specific item on server
     const {data} = await axios({
         method: "get",
-        baseURL: ITEM_API_URL,
-        url: `/${id}` 
+        url: serverUrl + ITEM_API_URL + `/${id}` 
     });
 
     //send the specific item to cartItems(server)
     const cartItem = await axios({
         method: "POST",
-        baseURL: CART_API_URL,
-        url: "/",
+        url: serverUrl + CART_API_URL + "/",
         data: {
             userId,
             itemId: data._id,
@@ -43,8 +43,7 @@ export const requestCartItems = (userId) => async(dispatch, getState) => {
 
     const { data } = await axios({
         method: "GET",
-        baseURL: CART_API_URL,
-        url: `/user-cart-items/${userId}`
+        url: serverUrl + CART_API_URL + `/user-cart-items/${userId}`
     });
 
 
@@ -57,12 +56,10 @@ export const requestCartItems = (userId) => async(dispatch, getState) => {
 }
 
 export const removeFromCart = (id) => async(dispatch, getState) => {
-    console.log(id);
     //remove from db
     await axios({
         method: "DELETE",
-        baseURL: CART_API_URL,
-        url: "/remove",
+        url: serverUrl + CART_API_URL + "/remove",
         data: {
             cartId: id
         }

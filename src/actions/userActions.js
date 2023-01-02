@@ -8,6 +8,8 @@ import { DELETE_PROFILE_FAIL, DELETE_PROFILE_REQUEST, DELETE_PROFILE_SUCCESS, FO
     UPDATE_USER_REQUEST, UPDATE_USER_SUCCESS, UPDATE_USER_FAIL, UPDATE_SUCCESS_RESET, DELETE_USER_REQUEST, 
     DELETE_USER_SUCCESS, DELETE_USER_FAIL, SEND_PASSWORD_REQUEST, SEND_PASSWORD_SUCCESS, SEND_PASSWORD_FAIL, ADD_USER_REQUEST, ADD_USER_SUCCESS, ADD_USER_FAIL, ADD_USER_ERROR_RESET} from "../constants/userConstants";
 
+const serverUrl = "https://cyclexbackend.adaptable.app";
+
 export const login = (email, password) => async(dispatch) => {
     try {
         dispatch({
@@ -16,8 +18,7 @@ export const login = (email, password) => async(dispatch) => {
 
         const { data } = await axios({
             method: "POST",
-            baseURL: USER_API_URL,
-            url: "/login",
+            url: serverUrl + USER_API_URL + "/login",
             headers: {
                 "Content-type": "application/json"
             },
@@ -59,8 +60,7 @@ export const register = (name, email, password, confirmPassword) => async(dispat
     
         const { data } = await axios({
             method: "POST",
-            baseURL: USER_API_URL,
-            url: "/",
+            url: serverUrl + USER_API_URL + "/",
             headers: {
                 "Content-type": "application/json"
             },
@@ -104,8 +104,7 @@ export const getUserProfile = (id) => async(dispatch, getState) => {
     
         const { data } = await axios({
             method: "GET",
-            baseURL: USER_API_URL,
-            url: `/${id}`,
+            url: serverUrl + USER_API_URL + `/${id}`,
             headers: {
                 "Content-type": "application/json",
                 Authorization: `Bearer ${userInfo.token}`
@@ -135,8 +134,7 @@ export const updateUserProfile = (user) => async(dispatch, getState) => {
         
         const {data} = await axios({
             method: "PUT",
-            baseURL: USER_API_URL,
-            url: "/profile",
+            url: serverUrl + USER_API_URL + "/profile",
             headers: {
                 "Content-type":"application/json",
                 Authorization: `Bearer ${userInfo.token}`
@@ -174,8 +172,7 @@ export const deleteUserProfile = () => async(dispatch, getState) => {
 
         await axios({
             method: "DELETE",
-            baseURL: USER_API_URL,
-            url: "/profile",
+            url: serverUrl + USER_API_URL + "/profile",
             headers: {
                 Authorization: `Bearer ${userInfo.token}`
             }
@@ -201,8 +198,7 @@ export const userForgotPassword = (email) => async(dispatch) => {
 
         await axios({
             method: "POST",
-            baseURL: USER_API_URL,
-            url: "/email",
+            url: serverUrl + USER_API_URL + "/email",
             headers: {
                 "Content-type": "application/json"
             },
@@ -233,8 +229,7 @@ export const getAllUsers = () => async(dispatch) => {
     
         const { data } = await axios({
             method: "GET",
-            baseURL: USER_API_URL,
-            url: "/users-tool"
+            url: serverUrl + USER_API_URL + "/users-tool"
         });
     
         dispatch({
@@ -258,8 +253,7 @@ export const updateUser = (userId, name, email, password, isAdmin) => async(disp
         
         await axios({
             method: "PUT",
-            baseURL: USER_API_URL,
-            url: "/users-tool",
+            url: serverUrl + USER_API_URL + "/users-tool",
             headers: {
                 "Content-type": "application/json"
             },
@@ -298,8 +292,7 @@ export const deleteUser = (userId) => async(dispatch) => {
 
         await axios({
             method: "DELETE",
-            baseURL: USER_API_URL,
-            url: "/users-tool",
+            url: serverUrl + USER_API_URL + "/users-tool",
             data: {
                 userId
             }
@@ -326,8 +319,7 @@ export const sendPasswordReset = (email) => async(dispatch) => {
     
         await axios({
             method: "POST",
-            baseURL: USER_API_URL,
-            url: "/users-tool",
+            url: serverUrl + USER_API_URL + "/users-tool",
             data: {
                 email
             }
@@ -353,8 +345,7 @@ export const addNewUser = (name, email, password, isAdmin) => async(dispatch) =>
     
         await axios({
             method: "POST",
-            baseURL: USER_API_URL,
-            url: "/add-user",
+            url: serverUrl + USER_API_URL + "/add-user",
             data: {
                 name,
                 email,

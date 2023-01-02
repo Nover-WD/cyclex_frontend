@@ -91,7 +91,7 @@ export default function PrimaryMenu(){
                       </MenuItem> 
                       <MenuItem onClick={handleClose}>
                         { userInfo ? userInfo.isAdmin ? (
-                          <Link to="/admin">Admin</Link> ) : null
+                          <Link to="/cyclex-admin">Admin</Link> ) : null
                         : null }
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
