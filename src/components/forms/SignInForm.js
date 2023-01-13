@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 // import Password from "../Password";
 import RememberMe from "../RememberMe";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Box, Typography, Stack, TextField, Button, Alert, Collapse, IconButton } from "@mui/material";
+import { Box, Typography, Stack, TextField, Button, Alert, Collapse, IconButton, Paper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -85,6 +85,11 @@ export default function SignInForm(){
                             </Link>
                         </Button>
                     </Stack>
+                    <Paper elevation={4} sx={{padding: "20px"}}>
+                        <Typography sx={{fontWeight: "700"}}>Hey, want to test the app but don't want to use your information? Feel free to use the following credentials:</Typography>
+                        <Typography sx={{fontWeight: "700"}}>Email: usera@gmail.com</Typography>
+                        <Typography sx={{fontWeight: "700"}}>Password: usera123</Typography>
+                    </Paper>
                 </Box>
         </>
     )

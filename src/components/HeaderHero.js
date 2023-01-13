@@ -26,10 +26,10 @@ export default function HeaderHero(){
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/assets/img/mountain-bike2.png" class="d-block vh-80" alt="Extreme Mountain Bike"/>
+                    <img src="/assets/img/road-bike.png" class="d-block vh-80" alt="Black Road Bike"/>
                 </div>
                 <div class="carousel-item">
-                    <img src="/assets/img/road-bike.png" class="d-block vh-80" alt="Black Road Bike"/>
+                    <img src="/assets/img/mountain-bike2.png" class="d-block vh-80" alt="Extreme Mountain Bike"/>
                 </div>
                 <div class="carousel-item">
                     <img src="/assets/img/helmets.png" class="d-block vh-80" alt="Customized Helmets"/>
