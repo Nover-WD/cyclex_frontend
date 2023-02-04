@@ -82,18 +82,19 @@ export default function PrimaryMenu(){
                     onClose={handleClose}
                     sx={{textTransform: "uppercase"}}
                         >
-                      <MenuItem onClick={handleClose}>
-                        { userInfo ? (
-                          <Link to="/profile">View Profile</Link>
-                        ) : (
-                          <Link to="/signin">Sign in</Link>
-                        )}
-                      </MenuItem> 
-                      <MenuItem onClick={handleClose}>
                         { userInfo ? userInfo.isAdmin ? (
-                          <Link to="/cyclex-admin">Admin</Link> ) : null
-                        : null }
-                      </MenuItem>
+                          <>
+                          <MenuItem onClick={handleClose}>
+                            <Link to="/profile">View Profile</Link>
+                          </MenuItem>
+                          <MenuItem onClick={handleClose}>
+                            <Link to="/cyclex-admin">Admin</Link> 
+                          </MenuItem>
+                          </>
+                        ) : (  <MenuItem onClick={handleClose}> <Link to="/profile">View Profile</Link> </MenuItem> ) 
+                        : (
+                          <MenuItem onClick={handleClose}>  <Link to="/signin">Sign in</Link> </MenuItem> 
+                        )}
                       <MenuItem onClick={handleClose}>
                         { userInfo ? (
                           <Link to="#" onClick={handleLogout}>Logout</Link>

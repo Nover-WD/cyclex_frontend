@@ -6,7 +6,7 @@ export default function TopBanner(){
     return(
         <Box sx={{textAlign:'center'}}>
             <Typography variant="h5" sx={{fontWeight: "400", padding: "10px 10px", backgroundColor: "secondary.light"}}>
-              Get 50% on selected items for your first purchase!
+              Get 50% off on selected items for your first purchase!
             </Typography>
         </Box>
     )
