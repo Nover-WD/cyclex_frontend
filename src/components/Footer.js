@@ -7,7 +7,7 @@ export default function Footer(){
         <Box sx={{padding: "60px 60px 30px", '@media (max-width: 600px)': {padding: '60px 30px'}, backgroundColor: "primary.main"}}>
             <SecondaryMenu/>
             <Typography variant="h6" textAlign="center" sx={{fontWeight: "400", pt: "40px"}}>
-                Copyright ©2023 CycleX | For Portfolio by Nover Garin
+                Copyright ©2023 CycleX | For Portfolio by Nover
             </Typography>
         </Box>
     )
