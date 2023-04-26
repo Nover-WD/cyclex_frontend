@@ -9,7 +9,7 @@ const QuantityBar = (props) => {
         <Stack 
         direction="row"
         alignItems="center"
-        spacing={{xs: 2, sm: 4}}
+        spacing={2}
         sx={{margin: "20px 0"}}
         >
             <Typography variant="h5">Quantity:</Typography>
