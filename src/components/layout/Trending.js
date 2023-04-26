@@ -20,8 +20,10 @@ const Item = styled(Paper) ({
 const useStyles = makeStyles({
     root: {
         padding: '60px 60px',
-        '@media (max-width: 600px)': {
-            padding: '30px 30px'
+        marginTop: '-36px',
+        '@media (max-width: 599px)': {
+            padding: '30px 30px',
+            marginTop: '-92px'
         }
     },
     gridContainer: {
