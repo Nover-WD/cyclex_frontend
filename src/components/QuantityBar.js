@@ -7,7 +7,8 @@ import { Add, Remove } from "@mui/icons-material";
 const QuantityBar = (props) => {
     return (
         <Stack 
-        direction={{xs:"column", sm:"row"}}
+        direction={{xs:"row", sm:"row"}}
+        alignItems="center"
         spacing={{xs: 2, sm: 4}}
         sx={{margin: "20px 0"}}
         >
