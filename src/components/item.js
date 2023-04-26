@@ -150,7 +150,8 @@ const Item = () => {
                         </Typography>
                         </Box>
                         <Stack 
-                        direction={{xs:"column", sm:"row"}}
+                        direction="row"
+                        alignItems="center"
                         spacing={{xs: 2, sm: 4}}
                         sx={{margin: "20px 0"}}
                         >
