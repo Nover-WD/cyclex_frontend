@@ -23,7 +23,7 @@ const useStyles = makeStyles({
         marginTop: '-36px',
         '@media (max-width: 599px)': {
             padding: '30px 30px',
-            marginTop: '-92px'
+            marginTop: '-42px'
         }
     },
     gridContainer: {
